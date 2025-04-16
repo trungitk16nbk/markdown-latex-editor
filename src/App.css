@@ -70,11 +70,12 @@ button {
 }
 
 .editor-container, .preview-container {
-  flex: 1;
+  width: 50%; /* Fix width to 50% each */
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
+  overflow: hidden; /* Prevent content from overflowing */
 }
 
 .editor-container {
@@ -85,13 +86,14 @@ button {
   background-color: #fff;
 }
 
-/* Divider between editor and preview */
+/* Enhanced divider between editor and preview */
 .divider {
-  width: 6px;
-  background-color: #ddd;
+  width: 10px; /* Increased width for better visibility */
+  background-color: #c0c0c0; /* Lighter color */
   cursor: col-resize;
   box-shadow: -1px 0 3px rgba(0,0,0,0.1), 1px 0 3px rgba(0,0,0,0.1);
   position: relative;
+  z-index: 10;
 }
 
 .divider::after {
@@ -101,8 +103,8 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 2px;
-  height: 30px;
-  background-color: #aaa;
+  height: 50px; /* Increased height for better visibility */
+  background-color: #666; /* Darker line in the middle */
   border-radius: 2px;
 }
 
@@ -111,6 +113,7 @@ button {
   font-family: 'Fira Code', monospace;
   font-size: 14px;
   overflow: auto;
+  width: 100%; /* Ensure editor takes full width of container */
 }
 
 .preview-scroll {
@@ -118,12 +121,13 @@ button {
   overflow: auto;
   background-color: #fff;
   padding: 10px;
+  width: 100%; /* Ensure preview takes full width of container */
 }
 
 .preview-content {
   padding: 20px;
   min-height: 100%;
-  max-width: 800px;
+  max-width: 100%; /* Make sure preview content doesn't exceed container */
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
